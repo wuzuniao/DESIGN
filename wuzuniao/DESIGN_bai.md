@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: wuzuniao-design-analysis
-description: 一套通用、精简式的品牌设计系统——以异常厚重的近黑显示无衬线字体（字重 900，64–126 px）与纯粹的墨黑品牌强调色 (#0E0F0C)、白色的中性表层，以及铺在雾灰白画布 (#F4F4F2) 上的圆角白色卡片为核心；系统刻意保持克制与通用，摒弃行业专属语义，更像一份斯堪的纳维亚风格的极简设计手册，而非某个具体品牌的定制界面。
+description: 一套面向古诗词、小说等文学阅读项目的设计系统——以异常厚重的近黑显示无衬线字体（字重 900，64–126 px）与纯粹的墨黑品牌强调色 (#0E0F0C)、白色的中性表层，以及铺在雾灰白画布 (#F4F4F2) 上的圆角白色卡片为核心；诗词卡片内的诗句正文以思源宋体（Source Han Serif）呈现古典纸感（次要兼容通用宋体），诗词标题、作者元信息与卡片之外的界面文字一律保持思源黑体——现代极简的界面骨架之下，包裹一页专属于古典文学的纸面。
 
 colors:
   primary: "#0e0f0c"
@@ -99,6 +99,23 @@ typography:
     fontFamily: Inter, system-ui, sans-serif
     fontSize: 16px
     fontWeight: 600
+    lineHeight: 24px
+  poem-title:
+    fontFamily: "Source Han Sans SC", "Noto Sans SC", "思源黑体", Inter, system-ui, sans-serif
+    fontSize: 28px
+    fontWeight: 600
+    lineHeight: 44.8px
+    letterSpacing: 1px
+  poem-body:
+    fontFamily: "Source Han Serif SC", "Noto Serif SC", "思源宋体", "Songti SC", "STSong", "SimSun", serif
+    fontSize: 22px
+    fontWeight: 400
+    lineHeight: 44px
+    letterSpacing: 1.5px
+  poem-meta:
+    fontFamily: "Source Han Sans SC", "Noto Sans SC", "思源黑体", Inter, system-ui, sans-serif
+    fontSize: 14px
+    fontWeight: 400
     lineHeight: 24px
 
 rounded:
@@ -206,6 +223,15 @@ components:
     typography: "{typography.body-md}"
     rounded: "{rounded.xl}"
     padding: "{spacing.xl}"
+  poem-card:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
+    titleTypography: "{typography.poem-title}"
+    bodyTypography: "{typography.poem-body}"
+    metaTypography: "{typography.poem-meta}"
+    metaColor: "{colors.body}"
+    rounded: "{rounded.xl}"
+    padding: "{spacing.xl}"
   badge-positive:
     backgroundColor: "{colors.positive-deep}"
     textColor: "{colors.on-primary}"
@@ -290,15 +316,18 @@ components:
 
 ## 概览
 
-无足鸟 —— 一套通用、精简式的品牌设计系统 —— 以一组标志性的搭配确立自身语言：纯粹的墨黑 `{colors.primary}`（`#0e0f0c`）被用作 CTA 胶囊按钮与品牌强调色，衬在一整条贯穿首屏的雾灰白画布 `{colors.canvas-soft}`（`#f4f4f2`）之上，再配上与之同源的近黑墨色 `{colors.ink}`（`#0e0f0c`）—— 系统只有一个黑：按钮、标题、正文与页脚共享同一份墨色，白色画布则是它唯一的舞台。整个系统刻意保持克制与通用，摒弃行业专属语义，读起来更像是一本沉静的斯堪的纳维亚风格极简设计手册 —— 大量留白、硕大的圆角卡片，以及一副字重高达 900、撑起每个首屏大标题的异常厚重显示字体。
+无足鸟 —— 一套为古诗词、小说等文学阅读项目打造的设计系统 —— 以一组标志性的搭配确立自身语言：纯粹的墨黑 `{colors.primary}`（`#0e0f0c`）被用作 CTA 胶囊按钮与品牌强调色，衬在一整条贯穿首屏的雾灰白画布 `{colors.canvas-soft}`（`#f4f4f2`）之上，再配上与之同源的近黑墨色 `{colors.ink}`（`#0e0f0c`）—— 系统只有一个黑：按钮、标题、正文与页脚共享同一份墨色，白色画布则是它唯一的舞台。整个系统在克制的极简框架之下专注于一件事 —— 阅读：大量留白、硕大的圆角卡片，一副字重高达 900、撑起每个首屏大标题的异常厚重显示字体，以及一张诗句正文以思源宋体呈现、标题与元信息以思源黑体标注的诗词卡片。
 
 显示字体是品牌第二个决定性的声音。**思源黑体**字体族在最大首屏上以 900 字重、64 px 到 126 px 的尺度承载首屏显示。品牌将思源黑体 900 与字重 600 的 **Inter** 搭配用于次级显示 —— 这种厚实、自带专属气质的字体面与 Inter 的中性之间形成的对比，构建出独特的层级：思源黑体 900 用于品牌高光时刻，Inter 600 用于其余一切。
+
+**思源宋体**是系统唯一的衬线之声，且只出现在诗词卡片内部。诗句正文一律以思源宋体渲染（次要兼容通用宋体），以衬线的笔触还原纸上阅读的古典质感；而诗词卡片内的标题与作者元信息，连同卡片之外的导航、按钮、表单与说明文字，全部保持思源黑体 —— 宋体只属于诗句正文，黑体属于其余一切。
 
 卡片普遍采用胶囊圆角 —— `{rounded.xl}` 24 px 是品牌标志性的卡片圆角。按钮采用同样的 24 px 胶囊矩形造型。品牌绝不在 UI 元素上使用尖角；这种视觉上的柔和感正是其友好调性的一部分。
 
 **核心特征：**
 - 唯一的墨黑 CTA 强调色 `{colors.primary}`（`#0e0f0c`）—— 品牌通用的主操作色。没有第二种强调色，系统只有一个黑。
 - 双层显示字体 —— 思源黑体（字重 900，首屏尺度）+ Inter（字重 600，次级显示尺度）。这种对比正是品牌的字体叙事。
+- 诗词卡片 `{components.poem-card}` —— 诗句正文的唯一衬线舞台：卡片内的诗句以思源宋体呈现（次要兼容通用宋体），诗词标题、作者元信息与卡片外的一切文字保持思源黑体。
 - `{rounded.xl}` 24 px 是品牌规范的卡片与按钮圆角。宽厚、友好。
 - 白色调表层：纯白 `{colors.canvas}`（`#ffffff`）与雾灰白 `{colors.canvas-soft}`（`#f4f4f2`）共同构成品牌的底色基调 —— 白色承载内容，雾灰白专用于柔和的次级表层与卡片呼吸。
 - 一套完整的语义化色板：正向深蓝族、警示黄族、负向红族 —— 每一种都记录了内容 / 悬停 / 激活变体，供产品内使用。黑白只承载结构，状态语义交给色相。
@@ -338,9 +367,10 @@ components:
 ## 字体排印
 
 ### 字体族
-两套字体面阶梯式支撑整个系统：
-1. **思源黑体（Source Han Sans SC / Noto Sans SC）** —— 专属几何无衬线字体，以异常厚重的 900 字重用于所有首屏显示。该字体面是品牌的排印标志。始终使用 900 字重，在营销表层上绝不变轻。
-2. **Inter** —— 用于次级显示（字重 600）、所有正文以及表单标签。加载时启用 `font-feature-settings: "calt"` 以获得上下文替代字形。
+三套字体面阶梯式支撑整个系统：
+1. **思源黑体（Source Han Sans SC / Noto Sans SC）** —— 专属几何无衬线字体，以异常厚重的 900 字重用于所有首屏显示，并承载诗词卡片之外的全部界面文字。该字体面是品牌的排印标志。始终使用 900 字重，在营销表层上绝不变轻。
+2. **Inter** —— 用于次级显示（字重 600）、界面正文以及表单标签。加载时启用 `font-feature-settings: "calt"` 以获得上下文替代字形。
+3. **思源宋体（Source Han Serif SC / Noto Serif SC）** —— 系统唯一的衬线字体，专用于诗词卡片内的诗句正文。次要兼容通用宋体（Songti SC / STSong / SimSun）。宋体绝不越出诗句正文的边界；诗词卡片内的诗词标题与作者 / 朝代元信息使用思源黑体。
 
 ### 层级
 
@@ -360,15 +390,19 @@ components:
 | `{typography.body-sm-strong}` | 14px | 600 | 20px | 0 | 加粗说明 / 导航链接。 |
 | `{typography.caption}` | 12px | 400 | 16px | 0 | 细则。 |
 | `{typography.button-md}` | 16px | 600 | 24px | 0 | 按钮标签。 |
+| `{typography.poem-title}` | 28px | 600 | 44.8px | 1px | 诗词卡片标题（思源黑体）。 |
+| `{typography.poem-body}` | 22px | 400 | 44px | 1.5px | 诗词卡片诗句正文（思源宋体）。 |
+| `{typography.poem-meta}` | 14px | 400 | 24px | 0 | 诗词卡片作者 / 朝代元信息（思源黑体）。 |
 
 ### 原则
 - **首屏用 900 字重，其余一切用 600 字重。** 品牌的显示上限是全黑字重；其下皆为半粗体。
-- **思源黑体承载品牌之声，Inter 负责实用文本。** 严格的角色分工。
+- **思源黑体承载界面之声（含诗词标题与元信息），Inter 负责实用文本，思源宋体只属于诗词卡片内的诗句正文。** 严格的角色分工 —— 诗句是宋体的纸面，其余一切是黑体的界面。
 
 ### 关于字体替代的说明
 思源黑体为 Adobe 与 Google 联合发布的开源字体（亦以 Noto Sans SC 之名分发）。开源替代方案：
 - **显示字（首屏）** —— *思源黑体 / Noto Sans SC* 字重 900，或 *Inter* 字重 900、*Manrope* 字重 800 / 900，均可捕捉几何厚重感。*Geist* 字重 800 是尚可的第二选择。
 - **次级显示 + 正文** —— *Inter* 是品牌实际的第二字体面。
+- **诗句正文（诗词卡片内）** —— *思源宋体 / Noto Serif SC*（Adobe 与 Google 联合发布的开源衬线字体）为首选；次要兼容通用宋体：*Songti SC*（macOS）、*STSong*、*SimSun*（Windows 中易宋体），最终以 serif 兜底。诗词标题与元信息无需衬线替代 —— 随全局思源黑体。
 
 ## 布局
 
@@ -455,6 +489,9 @@ components:
 **`item-card`** —— 品牌的标志性内容卡片（通用，可承载任意条目信息）。
 - 背景 `{colors.canvas}`，文本 `{colors.ink}`，1 px 实线 `{colors.canvas-soft}` 边框，内边距 `{spacing.xl}`，形状 `{rounded.xl}`。标题用 `{typography.body-md-strong}`，元数据用 `{colors.body}`。
 
+**`poem-card`** —— 诗词卡片：诗句正文的专属载体（古诗词、诗句摘录、小说选段等阅读内容）。
+- 背景 `{colors.canvas}`，文本 `{colors.ink}`，内边距 `{spacing.xl}`，形状 `{rounded.xl}`。**仅诗句正文使用思源宋体**（次要兼容通用宋体）：诗句用 `{typography.poem-body}`；诗词标题用 `{typography.poem-title}`、作者 / 朝代元信息用 `{typography.poem-meta}`（颜色 `{colors.body}`），均为思源黑体 —— 卡片内外，除诗句外的一切文字保持思源黑体。
+
 ### 输入与表单
 
 **`text-input`** —— 规范文本输入框。
@@ -527,6 +564,7 @@ components:
 
 ### 应该做
 - 为每个主 CTA 保留 `{colors.primary}` 墨黑。黑色胶囊正是品牌的转化标志。
+- 诗词卡片内仅诗句正文使用思源宋体（`{typography.poem-body}`），并保持宽松的行高与字间距 —— 那是系统里唯一的衬线舞台，为古典文学还原纸感；诗词标题（`{typography.poem-title}`）与作者 / 朝代元信息（`{typography.poem-meta}`）使用思源黑体。
 - 首屏大标题使用 `{typography.display-mega}` / `{typography.display-xl}`，思源黑体字重 900。绝不可更轻。
 - 按钮与卡片使用 `{rounded.xl}` 24 px。宽厚的圆角正是品牌的友好标志。
 - 页面表层在 `{colors.canvas-soft}` 雾灰白画布 → `{colors.canvas}` 白色卡片之间循环切换。表层对比承载高度感。
@@ -534,6 +572,7 @@ components:
 
 ### 不应该做
 - 不要引入第二种品牌强调色。墨黑是唯一的身份色。
+- 不要把宋体用在诗句正文之外 —— 诗词标题、作者元信息、导航、按钮、表单、页脚等文字一律思源黑体；衬线只属于卡片内的诗句正文。
 - 不要以 700 或更轻的字重渲染首屏。品牌的显示字重是 900。
 - 不要把 CTA 渲染成尖角矩形。24 px 胶囊几何形状不可妥协。
 - 不要将墨黑 CTA 与深色表层搭配。品牌始终让黑色胶囊落在中性浅色表层上（雾灰白 / 纯白）。

@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: wuzuniao-design-analysis
-description: 一套通用、精简式的品牌设计系统——以异常厚重的近黑显示无衬线字体（字重 900，64–126 px）与鲜明的 Sun Gold 品牌强调色 (#FFC400)、暖色调的中性表层，以及铺在淡黄色画布 (#FFF8E1) 上的圆角白色卡片为核心；系统刻意保持克制与通用，摒弃行业专属语义，更像一份斯堪的纳维亚风格的极简设计手册，而非某个具体品牌的定制界面。
+description: 一套面向记账、理财与股票交易的金融系统品牌设计语言——以异常厚重的近黑显示无衬线字体（字重 900，64–126 px）与鲜明的 Sun Gold 品牌强调色 (#FFC400)、暖色调的中性表层，以及铺在淡黄色画布 (#FFF8E1) 上的圆角白色卡片为核心；行情语义色默认遵循 A 股惯例的红涨绿跌——收入、涨幅、盈利以红色族（#d03238）表达，支出、跌幅、亏损以绿色族（#0a8f4c）表达；欧美市场模块按当地惯例反转极性（绿涨红跌），覆盖记账流水、理财收益与股票行情全部场景。
 
 colors:
   primary: "#FFC400"
@@ -15,15 +15,17 @@ colors:
   mute: "#868685"
   canvas: "#ffffff"
   canvas-soft: "#FFF8E1"
-  positive: "#e0a100"
-  positive-deep: "#c68a00"
+  positive: "#d03238"
+  positive-deep: "#a72027"
+  positive-darkest: "#a7000d"
+  positive-bg: "#ffe9e9"
   warning: "#0066FF"
   warning-deep: "#0049b8"
   warning-content: "#ffffff"
-  negative: "#d03238"
-  negative-deep: "#a72027"
-  negative-darkest: "#a7000d"
-  negative-bg: "#ffe9e9"
+  negative: "#0a8f4c"
+  negative-deep: "#08763f"
+  negative-darkest: "#06512d"
+  negative-bg: "#e9f7ef"
   accent-blue: "#b3c5ff"
 
 typography:
@@ -207,8 +209,8 @@ components:
     rounded: "{rounded.xl}"
     padding: "{spacing.xl}"
   badge-positive:
-    backgroundColor: "{colors.positive-deep}"
-    textColor: "{colors.on-primary}"
+    backgroundColor: "{colors.positive-bg}"
+    textColor: "{colors.positive-darkest}"
     typography: "{typography.body-sm-strong}"
     rounded: "{rounded.pill}"
     padding: "{spacing.xs} {spacing.md}"
@@ -290,7 +292,7 @@ components:
 
 ## 概览
 
-无足鸟 —— 一套通用、精简式的品牌设计系统 —— 以一组标志性的搭配确立自身语言：鲜亮的 Sun Gold `{colors.primary}`（`#FFC400`）被用作 CTA 胶囊按钮与品牌强调色，衬在一整条贯穿首屏的淡奶油黄色画布 `{colors.canvas-soft}`（`#FFF8E1`）之上，再配上带有一丝暖意的近黑墨色 `{colors.ink}`（`#0e0f0c`）。整个系统刻意保持克制与通用，摒弃行业专属语义，读起来更像是一本沉静的斯堪的纳维亚风格极简设计手册 —— 大量留白、硕大的圆角卡片，以及一副字重高达 900、撑起每个首屏大标题的异常厚重显示字体。
+无足鸟 —— 一套面向记账、理财与股票交易的金融系统品牌设计语言 —— 以一组标志性的搭配确立自身语言：鲜亮的 Sun Gold `{colors.primary}`（`#FFC400`）被用作 CTA 胶囊按钮与品牌强调色，衬在一整条贯穿首屏的淡奶油黄色画布 `{colors.canvas-soft}`（`#FFF8E1`）之上，再配上带有一丝暖意的近黑墨色 `{colors.ink}`（`#0e0f0c`）。在克制的斯堪的纳维亚式极简表层之下，系统内嵌一套遵循 A 股惯例的金融色彩语义 —— **红涨绿跌**：红色承载收入、涨幅与盈利，绿色承载支出、跌幅与亏损 —— 覆盖记账流水、理财收益与股票行情的全部数据呈现。
 
 显示字体是品牌第二个决定性的声音。**思源黑体**字体族在最大首屏上以 900 字重、64 px 到 126 px 的尺度承载首屏显示。品牌将思源黑体 900 与字重 600 的 **Inter** 搭配用于次级显示 —— 这种厚实、自带专属气质的字体面与 Inter 的中性之间形成的对比，构建出独特的层级：思源黑体 900 用于品牌高光时刻，Inter 600 用于其余一切。
 
@@ -301,7 +303,7 @@ components:
 - 双层显示字体 —— 思源黑体（字重 900，首屏尺度）+ Inter（字重 600，次级显示尺度）。这种对比正是品牌的字体叙事。
 - `{rounded.xl}` 24 px 是品牌规范的卡片与按钮圆角。宽厚、友好。
 - 奶油色调画布 `{colors.canvas-soft}`（`#FFF8E1`）是品牌的首屏表层；白色 `{colors.canvas}` 专用于奶油色带内的卡片。
-- 一套完整的语义化色板：正向深黄族、警示蓝族、负向红族 —— 每一种都记录了内容 / 悬停 / 激活变体，供产品内使用。
+- 一套遵循 A 股惯例的红涨绿跌语义化色板：收入 / 涨红族、警示蓝族、支出 / 跌绿族 —— 每一种都记录了内容 / 悬停 / 激活变体，供记账、理财与行情场景使用。
 
 ## 颜色
 
@@ -322,16 +324,45 @@ components:
 - **正文色**（`{colors.body}` — `#454745`）：次级正文文本。
 - **弱文本色**（`{colors.mute}` — `#868685`）：最低优先级的文本 —— 说明文字、占位符、细则。
 
-### 语义色
-- **正向**（`{colors.positive}` — `#e0a100`）：成功指示色（深黄），比主黄更深沉，与品牌黄形成明度分层 —— 亮黄承载交互，深黄承载确认。
-- **正向深**（`{colors.positive-deep}` — `#c68a00`）：按下的正向状态 / 正向徽章背景。
-- **警示**（`{colors.warning}` — `#0066FF`）：提醒指示色（冷蓝），在金黄主轴之外提供冷色对位。
+### 语义色 —— 红涨绿跌（A 股惯例）
+
+本系统的语义色板默认遵循中国大陆股市的通用色彩语言：**红涨绿跌**。红色表达收入、涨幅、盈利等正向资金变化，绿色表达支出、跌幅、亏损等负向资金变化 —— 与欧美市场"绿涨红跌"的惯例相反，这是系统面向中文金融用户的默认本地化决策。
+
+**极性规则：** 红涨绿跌是默认极性，适用于 A 股 / 中文语境的全部模块；当系统面向欧美市场提供模块时，行情极性按当地惯例**整体反转**为绿涨红跌（详见下方"欧美模块反转"）。关键约束不是"永不变"，而是**同一模块、同一视图内极性必须一致**——绝不允许两种极性混排。
+
+**正向 / 涨 —— 红族（收入 · 涨幅 · 盈利）**
+- **正向**（`{colors.positive}` — `#d03238`）：收入 / 上涨指示色，取自 A 股行情红。收入金额、涨幅百分比、盈利数字一律以此红承载。
+- **正向深**（`{colors.positive-deep}` — `#a72027`）：按下的正向状态 / 正向激活填充。
+- **正向最深**（`{colors.positive-darkest}` — `#a7000d`）：最高强调程度的正向文本（涨幅徽章文字、收益摘要数字），在浅红底上约 7:1 对比。
+- **正向背景**（`{colors.positive-bg}` — `#ffe9e9`）：收入徽章 / 涨幅提示条的浅红色底。
+
+**警示 —— 蓝族（风险提示）**
+- **警示**（`{colors.warning}` — `#0066FF`）：风险提醒指示色（冷蓝），在金黄主轴之外提供冷色对位。用于交易风控、账户安全等中性告警，不参与涨跌语义。
 - **警示深**（`{colors.warning-deep}` — `#0049b8`）：按下的警示状态。
 - **警示内容色**（`{colors.warning-content}` — `#ffffff`）：警示表层上的文本色（警示蓝底上的白字）。
-- **负向**（`{colors.negative}` — `#d03238`）：破坏 / 错误红。
-- **负向深**（`{colors.negative-deep}` — `#a72027`）：按下的破坏状态。
-- **负向最深**（`{colors.negative-darkest}` — `#a7000d`）：最高强调程度的破坏文本。
-- **负向背景**（`{colors.negative-bg}` — `#ffe9e9`）：用于破坏型提示框 / 负向徽章背景的浅红色。
+
+**负向 / 跌 —— 绿族（支出 · 跌幅 · 亏损）**
+- **负向**（`{colors.negative}` — `#0a8f4c`）：支出 / 下跌指示色，取自 A 股行情绿。支出金额、跌幅百分比、亏损数字一律以此绿承载。
+- **负向深**（`{colors.negative-deep}` — `#08763f`）：按下的负向状态 / 负向激活填充。
+- **负向最深**（`{colors.negative-darkest}` — `#06512d`）：最高强调程度的负向文本（跌幅徽章文字、账单摘要数字）。
+- **负向背景**（`{colors.negative-bg}` — `#e9f7ef`）：支出徽章 / 跌幅提示条的浅绿色底。
+
+**红涨绿跌应用速查（A 股 / 中文语境默认极性）**
+
+| 场景 | 红（positive 族） | 绿（negative 族） |
+|---|---|---|
+| 记账 | 收入流水、入账金额 | 支出流水、出账金额 |
+| 股票 | 上涨、涨幅、盈利仓位 | 下跌、跌幅、亏损仓位 |
+| 理财 | 正收益、资产增值 | 负收益、资产缩水 |
+
+平盘 / 无变化的行情与流水，用 `{colors.body}` 或 `{colors.mute}` 灰色表达 —— 永不借用红绿。
+
+**欧美模块反转**
+
+当产品为欧美市场提供行情 / 交易模块时，涨跌极性按当地惯例反转：**绿涨红跌** —— 上涨、涨幅、盈利改用绿族（`{colors.negative}` 族），下跌、跌幅、亏损改用红族（`{colors.positive}` 族）。反转遵循以下规则：
+- **模块级整体反转**：以市场区域为粒度整体切换极性，同一模块内不可只反转部分组件。
+- **记账收支不反转**：收入红 / 支出绿的记账语义面向中文用户习惯，即使在欧美行情模块中也保持原极性（若产品决策要求记账同步反转，需整模块统一处理）。
+- **色值不变，只换映射**：反转是语义映射的互换（positive ↔ negative），红绿两族的色值、深浅层级与徽章结构保持不变。
 
 ### 品牌强调色 —— 第三层级
 - **强调蓝**（`{colors.accent-blue}` — `#b3c5ff`）：唯一的第三层强调色，用于插画内容 / 定价卡片内的明亮淡蓝，与主黄形成冷暖对比。
@@ -483,11 +514,11 @@ components:
 **`content-band`** —— 紧随首屏的白色内容带。
 - 背景 `{colors.canvas}`，文本 `{colors.ink}`，内边距 `{spacing.3xl} {spacing.xl}`。区块标题用 `{typography.display-md}`。
 
-**`badge-positive`** —— 正向状态胶囊。
-- 背景 `{colors.positive-deep}`（深金底），文本 `{colors.on-primary}`（深暖褐），正文用 `{typography.body-sm-strong}`，内边距 `{spacing.xs} {spacing.md}`，形状 `{rounded.pill}` —— 与负向徽章（浅红底深红字）形成成对的深字徽章语言。
+**`badge-positive`** —— 收入 / 上涨状态胶囊（红）。
+- 背景 `{colors.positive-bg}`（浅红底），文本 `{colors.positive-darkest}`（深红字，约 7:1），正文用 `{typography.body-sm-strong}`，内边距 `{spacing.xs} {spacing.md}`，形状 `{rounded.pill}`。用于收入流水、上涨行情、正收益标签。
 
-**`badge-negative`** —— 负向状态胶囊。
-- 背景 `{colors.negative-bg}`（浅红底），文本 `{colors.negative-darkest}`（深红字，约 7:1），正文用 `{typography.body-sm-strong}`，内边距 `{spacing.xs} {spacing.md}`，形状 `{rounded.pill}`。
+**`badge-negative`** —— 支出 / 下跌状态胶囊（绿）。
+- 背景 `{colors.negative-bg}`（浅绿底），文本 `{colors.negative-darkest}`（深绿字），正文用 `{typography.body-sm-strong}`，内边距 `{spacing.xs} {spacing.md}`，形状 `{rounded.pill}`。用于支出流水、下跌行情、亏损标签。与收入徽章构成成对的浅底深字徽章语言。
 
 ### 示例（示意）
 
@@ -531,7 +562,7 @@ components:
 - 首屏大标题使用 `{typography.display-mega}` / `{typography.display-xl}`，思源黑体字重 900。绝不可更轻。
 - 按钮与卡片使用 `{rounded.xl}` 24 px。宽厚的圆角正是品牌的友好标志。
 - 页面表层在 `{colors.canvas-soft}` 奶油色画布 → `{colors.canvas}` 白色卡片之间循环切换。表层对比承载高度感。
-- 产品内状态使用完整的语义色板（正向 / 警示 / 负向）—— 切勿将 Sun Gold 复用作成功指示色，因为它本身就是品牌 CTA。
+- 收支与行情数据默认使用红涨绿跌语义色板（A 股 / 中文语境）—— 收入 / 涨幅 / 盈利用红色族，支出 / 跌幅 / 亏损用绿色族；欧美市场模块按当地惯例整体反转为绿涨红跌。切勿将 Sun Gold 复用作收益或涨跌指示色，因为它本身就是品牌 CTA。
 
 ### 不应该做
 - 不要引入第二种品牌强调色。Sun Gold 是唯一的身份色。
@@ -539,4 +570,5 @@ components:
 - 不要把 CTA 渲染成尖角矩形。24 px 胶囊几何形状不可妥协。
 - 不要将金黄 CTA 与黄色背景搭配。品牌始终让 Sun Gold 落在中性表层上（奶油色 / 白色 / 墨色）。
 - 不要将 Sun Gold 用作浅色表层上的文本色或细线。金黄属于填充与暗底强调，浅色底上的品牌文本一律使用墨色。
+- 不要在同一模块或同一视图内混用两种涨跌极性。中文语境默认红涨绿跌；欧美模块允许并应当按当地惯例反转（绿涨红跌），但反转必须以模块为单位整体切换 —— 同屏混排两种极性才是金融数据呈现中最严重的可用性事故。
 - 不要为有效首屏字体排印用通用几何无衬线替代思源黑体 —— 这个专属字体面正是品牌之声。
