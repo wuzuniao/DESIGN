@@ -1,5 +1,12 @@
-# CodeBuddy 工作区数据（本地会话、记忆等，不入库）
-.codebuddy/
+# AI 编程工具工作区数据（本地会话、记忆等，不入库；仅自动生成提交内容的规范文件纳管）
+.codebuddy/*
+!.codebuddy/rules/
+.codebuddy/rules/*
+!.codebuddy/rules/git-commit-message/
+.trae/*
+!.trae/rules/
+.trae/rules/*
+!.trae/rules/git-commit-message.md
 
 # 系统/编辑器
 .DS_Store
